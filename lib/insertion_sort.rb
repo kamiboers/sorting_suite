@@ -58,5 +58,5 @@ end
 
 if __FILE__ == $0
   test = InsertionSort.new
-  test.sort((1..1000).to_a.shuffle)
+  test.sort((1..100).to_a.shuffle)
 end
