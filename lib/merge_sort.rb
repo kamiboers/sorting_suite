@@ -2,9 +2,6 @@ require 'pry'
 
 class MergeSort
 
-  def initialize
-  end
-
   def sort(array)
     split(array)
   end
