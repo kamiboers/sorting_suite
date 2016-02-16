@@ -13,7 +13,7 @@ class InsertionSort
     else
       continue_sort(array)
     end
-  array
+    array
   end
 
   def continue_sort(array)
@@ -26,14 +26,14 @@ class InsertionSort
 
 
   def insert_value_where_greater_than_previous_value(array)
-    array.each_with_index do |value, position| #traverses forward, holding value and position, which move into the 'sorted' side of the array
-      traverse_left = position - 1 #initially gives the value of the position to the left of the value/position in focus
-      while traverse_left >= 0 #ensures that nil doesn't make an appearance by only attempting to compare values if a value exists in the array
-        break if array[traverse_left] <= value #exits leftwards traversal if the value to the left is less than the value in focus
-        array[traverse_left+1] = array[traverse_left] #places the greater value of the position to the left in the position to its right, this continues until reaching position zero
-        traverse_left -= 1 #traverses left one place
+    array.each_with_index do |value, position|
+      traverse_left = position - 1
+      while traverse_left >= 0
+        break if array[traverse_left] <= value
+        array[traverse_left+1] = array[traverse_left]
+        traverse_left -= 1
       end
-      array[traverse_left+1] = value #controls for first position's participation, returning array[0] = current value, and places the hanging value of the original position into the array appropriately
+      array[traverse_left+1] = value
     end
   end
 
