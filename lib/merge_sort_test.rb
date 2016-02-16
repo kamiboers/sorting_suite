@@ -2,9 +2,9 @@ require 'pry'
 gem 'minitest', '~> 5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative 'insertion_sort'
+require_relative 'merge_sort'
 
-class MergeSort < Minitest::Test
+class MergeTest < Minitest::Test
 
   def test_sorts_an_unsorted_array
     test = MergeSort.new

@@ -3,7 +3,11 @@ require 'pry'
 class MergeSort
 
   def sort(array)
+    if array.length <= 1
+      return array
+    else
     split(array)
+  end
   end
 
   def split(array)
@@ -14,7 +18,7 @@ class MergeSort
      left_array = array[0...midpoint]
      right_array = array[midpoint..n]
 
-     merge(sort(left_array), sort(right_array))
+     merge(split(left_array), split(right_array))
   end
 
   def merge(left, right)
@@ -35,7 +39,9 @@ class MergeSort
 
 end
 
+if __FILE__ == $0
 test = MergeSort.new
-array = (1..10).to_a.shuffle
+array = (1..100).to_a.shuffle
 puts array.to_s
 puts test.sort(array).to_s
+end
