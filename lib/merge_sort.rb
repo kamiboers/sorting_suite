@@ -40,8 +40,14 @@ class MergeSort
 end
 
 if __FILE__ == $0
+
+  # test = MergeSort.new
+  # array = ["c", "b", "d", "a"].shuffle
+  # puts array.to_s
+  # puts test.sort(array).to_s
+  #
   test = MergeSort.new
-  array = ["c", "b", "d", "a"].shuffle
+  array = (1..100).to_a.shuffle
   puts array.to_s
   puts test.sort(array).to_s
 end
