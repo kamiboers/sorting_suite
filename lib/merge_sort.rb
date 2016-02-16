@@ -6,19 +6,19 @@ class MergeSort
     if array.length <= 1
       return array
     else
-    split(array)
-  end
+      split(array)
+    end
   end
 
   def split(array)
-  n = array.length
+    n = array.length
     return array if n == 1
     midpoint = n/2
 
-     left_array = array[0...midpoint]
-     right_array = array[midpoint..n]
+    left_array = array[0...midpoint]
+    right_array = array[midpoint..n]
 
-     merge(split(left_array), split(right_array))
+    merge(split(left_array), split(right_array))
   end
 
   def merge(left, right)
@@ -40,8 +40,8 @@ class MergeSort
 end
 
 if __FILE__ == $0
-test = MergeSort.new
-array = (1..100).to_a.shuffle
-puts array.to_s
-puts test.sort(array).to_s
+  test = MergeSort.new
+  array = ["c", "b", "d", "a"].shuffle
+  puts array.to_s
+  puts test.sort(array).to_s
 end
